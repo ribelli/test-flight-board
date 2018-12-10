@@ -1,0 +1,7 @@
+<div class="header header_shadowed"
+     [ngStyle]="{'background-color': isNowDay ? '#8f87ff' : '#161248' }">
+  <div class="header__content">
+    <div class="header__item header__item_textual">{{projectName}}</div>
+    <app-header-content *ngIf="!isHidden"></app-header-content>
+  </div>
+</div>

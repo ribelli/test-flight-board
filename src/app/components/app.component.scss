@@ -1,0 +1,16 @@
+$headerHeight: 70px;
+
+.header {
+  height: $headerHeight;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  overflow-y: auto;
+
+  &__board {
+    padding-top: $headerHeight;
+  }
+}
+

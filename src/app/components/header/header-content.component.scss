@@ -1,0 +1,190 @@
+
+.sky-container {
+  height: 70px;
+  width: 100%;
+}
+
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.paper-plane {
+  fill: #D8D8D8;
+}
+
+.paper-plane-tail {
+  fill: #C4C4C3;
+}
+
+.paper-plane-container {
+  width: 15vw;
+  height: 25px;
+  -webkit-animation: paper-plane-soaring 4s forwards infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  -moz-animation: paper-plane-soaring 4s forwards infinite;
+  -moz-animation-timing-function: ease-in-out;
+  animation: paper-plane-soaring 4s forwards infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.plane-container {
+  width: 100%;
+  margin: 0 auto;
+  z-index: 3;
+  -webkit-animation: paper-plane-scoping 2s alternate infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation: paper-plane-scoping 2s alternate infinite;
+  -moz-animation-timing-function: linear;
+  animation: paper-plane-scoping 2s alternate infinite;
+  animation-timing-function: linear;
+}
+
+.clouds-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+.cloud {
+  position: absolute;
+  top: 20%;
+  right: 0;
+  width: 300px;
+  height: 70px;
+  opacity: 1;
+  -webkit-animation: cloud-movement 8s infinite linear;
+  -webkit-animation-direction: forwards;
+  -moz-animation: cloud-movement 8s infinite linear;
+  -moz-animation-direction: forwards;
+  animation: cloud-movement 8s infinite linear;
+  animation-direction: forwards;
+
+  &_front {
+    z-index: 9;
+  }
+
+  &_distant {
+    z-index: 1;
+  }
+
+  &_smaller {
+    margin-right: 400px;
+    width: 60px;
+    margin-top: 20px;
+  }
+
+  &_small {
+    margin-right: 200px;
+    width: 80px;
+  }
+
+  &_big {
+    width: 100px;
+    margin-top: 10px;
+    margin-right: 150px;
+  }
+
+  &_massive {
+    width: 120px;
+    margin-top: 20px;
+    margin-right: 0;
+  }
+
+}
+
+.slow {
+  -webkit-animation-duration: 9.2s;
+  -moz-animation-duration: 9.2s;
+  animation-duration: 9.2s;
+}
+
+.slower {
+  -webkit-animation-duration: 11.2s;
+  -moz-animation-duration: 11.2s;
+  animation-duration: 11.2s;
+}
+
+.slowest {
+  -webkit-animation-duration: 13.5s;
+  -moz-animation-duration: 13.5s;
+  animation-duration: 13.5s;
+}
+
+.super-slow {
+  -webkit-animation-duration: 20.5s;
+  -moz-animation-duration: 20.5s;
+  animation-duration: 20.5s;
+}
+
+@-webkit-keyframes paper-plane-scoping {
+  0% {
+    -webkit-transform: translateY(2px);
+    -moz-transform: translateY(2px);
+    transform: translateY(2px);
+  }
+  100% {
+    -webkit-transform: translateY(50px);
+    -moz-transform: translateY(50px);
+    transform: translateY(50px);
+  }
+}
+
+@-webkit-keyframes paper-plane-soaring {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  40% {
+    -webkit-transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+  50% {
+    -webkit-transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+  60% {
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  70% {
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes cloud-movement {
+  0% {
+    opacity: 0.1;
+    -webkit-transform: translateX(300px);
+    -moz-transform: translateX(300px);
+    transform: translateX(300px);
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-1000px);
+    -moz-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+  }
+}

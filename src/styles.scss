@@ -1,0 +1,26 @@
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  // padding-top: 90px;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+html {
+  position: relative;
+  min-width: 320px;
+  height: 100%;
+  // overflow-y: scroll;
+}

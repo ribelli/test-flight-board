@@ -1,0 +1,128 @@
+$box-shadow: 0 2px 5px rgba(14, 21, 47, .2), 0 5px 20px rgba(14, 21, 47, .2);
+
+.timetable {
+  position:relative;
+  height: 100vh;
+  width: 100vw;
+  overflow-y:scroll;
+
+  &__header {
+    border-bottom: 1px solid #CDD0D8;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-evenly;
+    position: sticky;
+    background: whitesmoke;
+    top: 0;
+
+    &__tabs {
+      display: inline-flex;
+      padding: 0 35px;
+    }
+
+    &__tab {
+      padding: 15px 20px;
+      text-align: center;
+      white-space: nowrap;
+      font-size: 17px;
+      text-transform: capitalize;
+      flex-basis: 0;
+      flex-grow: 1;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -1px;
+      min-width: 150px;
+
+      &, &:hover, &:active, :focus {
+        color: #333;
+        text-decoration: none;
+      }
+
+      &.active {
+        border-bottom: 3px solid #7a5cd0;
+        font-weight: 700;
+
+        &, &:hover, &:active, :focus {
+          color: black;
+        }
+      }
+    }
+  }
+
+  &__input {
+    height: 30px;
+
+    &:focus {
+      outline: 0;
+    }
+
+    &_bordered {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: white;
+    }
+
+    &_medium {
+      width: 190px;
+    }
+  }
+
+  &__item {
+    margin: 5px;
+    color: #555;
+    flex-grow: 3;
+    flex-shrink: 1;
+  }
+
+  &__panel {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px 0;
+  }
+
+  &__settings {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__spinner {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__top-button {
+    position: fixed;
+    width: 26px;
+    height: 26px;
+    bottom: 15px;
+    right: 30px;
+    color: whitesmoke;
+    text-align: center;
+    background-color: rgba(122, 92, 208, 0.4);
+    border-radius: 50%;
+    outline: 0;
+    cursor: pointer;
+
+    &.hidden {
+      display: none;
+    }
+
+    &:hover, &:active {
+      background-color: #7a5cd0;
+    }
+  }
+
+  &__wrapper-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    width: 100%;
+    touch-action: manipulation;
+  }
+}

@@ -1,0 +1,60 @@
+<div class="timetable" #scrollTop
+     infiniteScroll
+     [infiniteScrollDistance]="3"
+     [infiniteScrollThrottle]="50"
+     [scrollWindow]="false"
+     (scrolled)="onScroll()">
+  <div class="timetable__panel">
+    <div class="timetable__settings">
+      <input class="timetable__input timetable__input_medium timetable__input_bordered timetable__item"
+             type="text" ngxDaterangepickerMd
+             [locale]="{firstDay: 1, format: 'DD/MM/YYYY'}"
+             [showCustomRangeLabel]="true"
+             [alwaysShowCalendars]="true"
+             [ranges]="dateRanges"
+             [(ngModel)]="selectedDates"
+             startKey="start"
+             endKey="end"
+             (ngModelChange)="setDate()"/>
+      <ngx-select-dropdown class="timetable__input timetable__input_medium timetable__item"
+                           [multiple]="false"
+                           [(value)]="singleSelect"
+                           [config]="flightRaceConfig" [options]="boards"
+                           (change)="getFlightsFromRace()">
+      </ngx-select-dropdown>
+      <div class="timetable__item">
+        <input type="checkbox"
+               (click)="setStatusCode()"
+               [checked]="currentStatusCode" />
+        <label>{{statusCode[0].valueOf()}}</label>
+      </div>
+    </div>
+  </div>
+  <div class="timetable__header">
+    <div class="timetable__header__tabs" *ngFor="let tab of tabs; let i = index">
+      <a class="timetable__header__tab"
+         [class.active]="tab === activeTab"
+         (click)="changeFlightStatus(i)">
+        {{tab}}
+      </a>
+    </div>
+  </div>
+  <div class="timetable__wrapper-container">
+    <div>
+      <div *ngIf="isWrongData">{{wrongDataText}}</div>
+      <app-board-row [hidden]="!isDataLoaded"
+                     *ngFor="let board of boards; let i = index"
+                     [item]="board"
+                     (click)="setStateSubRow(i)">
+      </app-board-row>
+    </div>
+  </div>
+  <div class="timetable__top-button hidden"
+       [class.hidden]="isHiddenButton"
+       (click)="scrollToTop()">
+    <i class="material-icons">arrow_upward</i>
+  </div>
+  <app-spinner class="timetable__spinner" *ngIf="!isDataLoaded"></app-spinner>
+</div>
+
+

@@ -1,0 +1,37 @@
+<div class="row-container" [@slideInOut]>
+  <div class="row-container__cell">
+    <div class="row-container__cell_inner row-container__cell_small">
+      {{item.dat | date:'dd.MM'}}
+      <div class="row-container__time">{{item.estimated_chin_start | date: 'shortTime'}}</div>
+    </div>
+  </div>
+  <div class="row-container__cell">
+    <div class="row-container__cell_inner">
+      <div class="row-container__title">
+        <h2>{{item.mar1.city}}</h2>
+        <span><sup>{{item.mar1.iata}}</sup></span>
+      </div>
+    </div>
+  </div>
+  <div class="row-container__cell">
+    <div class="row-container__cell_inner">
+      <div class="row-container__title">
+        <h2>{{item.mar2.city}}</h2>
+        <span><sup>{{item.mar2.iata}}</sup></span>
+      </div>
+    </div>
+  </div>
+  <div class="row-container__cell">
+    <div class="row-container__cell_inner">#{{item.flt}}</div>
+  </div>
+  <div class="row-container__cell">
+    <div class="row-container__cell_inner row-container__cell_small">
+      {{item.co.name}}
+    </div>
+  </div>
+  <div class="row-container__sub-line" *ngIf="item.isViewContainer">
+    <div>{{item.vip_status_eng}}</div>
+    <div>{{item.aircraft_type_name}}</div>
+  </div>
+  <!--  <div class="row-container__cell">{{i.t_boarding_start}} - {{i.t_bording_finish}}</div>-->
+</div>

@@ -1,0 +1,40 @@
+.row-container {
+  display: block;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-align: left;
+  border-bottom: 1px solid #efefef;
+  overflow-x: scroll;
+
+  &:hover, &:active, :focus {
+    background-color: #e6e6e6;
+    cursor: pointer;
+  }
+
+  &__cell {
+    display: table-cell;
+    vertical-align: middle;
+
+    &_inner {
+      padding: 10px;
+    }
+
+    &_small {
+      max-width: 75px;
+    }
+  }
+
+  &__sub-line {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  &__time {
+    color: #7a5cd0;
+  }
+
+  &__title {
+    display: inline-flex;
+    align-items: center;
+  }
+}
