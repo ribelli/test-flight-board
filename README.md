@@ -1,6 +1,7 @@
+*** Flight Board Application
 
-<h1>Getting Started</h1>
-Simple Angular app for travelers.
+> Simple Angular app for travelers
+- With API of Sheremetyevo International Airport
 
 <h2>Get the Code</h2>
 1) <b>git clone https://github.com/ribelli/test-flight-board.git</b> <br/>
