@@ -4,7 +4,7 @@ import * as moment from 'moment';
 import {BoardRowComponent} from './board-row.component';
 import {filter} from 'lodash';
 
-// объект Observable<any> для расписания рейсов
+// will need to add Observable<> for flights;
 
 const wrongDataText = 'Попробуйте задать другие критерии';
 
@@ -138,6 +138,8 @@ export class BoardComponent implements OnInit, OnDestroy, AfterContentInit {
   }
 
   getFlightsFromRace() {
+    // will need to make this method later
+    
     this.filteredData = true;
     this.boards = this.singleSelect;
   }
