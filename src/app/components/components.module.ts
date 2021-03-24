@@ -7,20 +7,25 @@ import {NgxDaterangepickerMd} from 'ngx-daterangepicker-material';
 import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 import {SelectDropDownModule} from 'ngx-select-dropdown';
 
+import {BoardService} from '@services/board.service';
+
 import {BoardComponent} from './board/board.component';
 import {BoardRowComponent} from './board/board-row.component';
 import {HeaderComponent} from './header/header.component';
 import {HeaderContentComponent} from './header/header-content.component';
 import {SpinnerComponent} from './spinner/spinner.component';
-import {BoardService} from '../services/board.service';
+
+export const COMPONENTS = [
+  BoardComponent,
+  BoardRowComponent,
+  HeaderComponent,
+  HeaderContentComponent,
+  SpinnerComponent,
+];
 
 @NgModule({
   declarations: [
-    BoardComponent,
-    BoardRowComponent,
-    HeaderComponent,
-    HeaderContentComponent,
-    SpinnerComponent
+    COMPONENTS,
   ],
   imports: [
     CommonModule,
@@ -32,14 +37,10 @@ import {BoardService} from '../services/board.service';
     InfiniteScrollModule
   ],
   exports: [
-    BoardComponent,
-    BoardRowComponent,
-    HeaderComponent,
-    HeaderContentComponent,
-    SpinnerComponent
+    COMPONENTS,
   ],
-  providers: [BoardService],
-  bootstrap: []
+  providers: [BoardService]
 })
+
 export class RebelComponentsModule {
 }

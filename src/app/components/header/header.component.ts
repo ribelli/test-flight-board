@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 
 const MOBILE_USER_AGENT = /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i;
 
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',

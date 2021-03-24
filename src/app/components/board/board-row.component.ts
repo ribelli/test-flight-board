@@ -1,11 +1,12 @@
 import {Component, Input} from '@angular/core';
-import {BoardItem} from '../../entities/board-item';
+import {BoardItem} from '@app/entities/board-item';
 import {
   trigger,
   style,
   animate,
   transition
 } from '@angular/animations';
+
 
 @Component({
   selector: 'app-board-row',
@@ -26,4 +27,3 @@ import {
 export class BoardRowComponent {
   @Input() item: BoardItem;
 }
-

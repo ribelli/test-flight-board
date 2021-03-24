@@ -1,6 +1,5 @@
 import {AfterContentInit, Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {BoardService} from '../../services/board.service';
-import {BoardItem} from '../../entities/board-item';
+import {BoardService} from '@services/board.service';
 import * as moment from 'moment';
 import {BoardRowComponent} from './board-row.component';
 import {filter} from 'lodash';
@@ -8,6 +7,7 @@ import {filter} from 'lodash';
 // объект Observable<any> для расписания рейсов
 
 const wrongDataText = 'Попробуйте задать другие критерии';
+
 
 @Component({
   selector: 'app-board-component',
@@ -35,23 +35,22 @@ export class BoardComponent implements OnInit, OnDestroy, AfterContentInit {
     'Last 7 Days': [moment().subtract(6, 'days'), moment()],
   };
   public boards = [];
-  private currentFlightsChanges: any;
   public wrongDataText = wrongDataText;
   public direction = {0: 'departure', 1: 'arrival'};
+  public statusCode = {0: 'delayed', 1: 'ontime'};
   public tabs: string[] = Object.values(this.direction);
   public activeTab = this.tabs[0];
-  private currentDirection = this.direction[0];
-  public statusCode = {0: 'delayed', 1: 'ontime'};
   public currentStatusCode = false;
   public isDataLoaded = false;
   public isHiddenButton = false;
   public isWrongData = false;
+  public singleSelect: any = [];
+  public selectedDates: any;
+  private currentDirection = this.direction[0];
+  private currentFlightsChanges: any;
   private page = 1;
   private perPage = 20;
   private filteredData = false;
-  public singleSelect: any = [];
-  public selectedDates: any;
-  selectedBoardItem: BoardItem;
 
   constructor(private boardService: BoardService) {
   }

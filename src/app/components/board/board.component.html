@@ -1,4 +1,5 @@
-<div class="timetable" #scrollTop
+<div class="timetable"
+     #scrollTop
      infiniteScroll
      [infiniteScrollDistance]="3"
      [infiniteScrollThrottle]="50"
@@ -6,16 +7,18 @@
      (scrolled)="onScroll()">
   <div class="timetable__panel">
     <div class="timetable__settings">
-      <input class="timetable__input timetable__input_medium timetable__input_bordered timetable__item"
-             type="text" ngxDaterangepickerMd
-             [locale]="{firstDay: 1, format: 'DD/MM/YYYY'}"
-             [showCustomRangeLabel]="true"
-             [alwaysShowCalendars]="true"
-             [ranges]="dateRanges"
-             [(ngModel)]="selectedDates"
-             startKey="start"
-             endKey="end"
-             (ngModelChange)="setDate()"/>
+      <label>
+        <input class="timetable__input timetable__input_medium timetable__input_bordered timetable__item"
+               type="text" ngxDaterangepickerMd
+               [locale]="{firstDay: 1, format: 'DD/MM/YYYY'}"
+               [showCustomRangeLabel]="true"
+               [alwaysShowCalendars]="true"
+               [ranges]="dateRanges"
+               [(ngModel)]="selectedDates"
+               startKey="start"
+               endKey="end"
+               (ngModelChange)="setDate()"/>
+      </label>
       <ngx-select-dropdown class="timetable__input timetable__input_medium timetable__item"
                            [multiple]="false"
                            [(value)]="singleSelect"
@@ -23,9 +26,11 @@
                            (change)="getFlightsFromRace()">
       </ngx-select-dropdown>
       <div class="timetable__item">
-        <input type="checkbox"
-               (click)="setStatusCode()"
-               [checked]="currentStatusCode" />
+        <label>
+          <input type="checkbox"
+                 (click)="setStatusCode()"
+                 [checked]="currentStatusCode" />
+        </label>
         <label>{{statusCode[0].valueOf()}}</label>
       </div>
     </div>
@@ -56,5 +61,3 @@
   </div>
   <app-spinner class="timetable__spinner" *ngIf="!isDataLoaded"></app-spinner>
 </div>
-
-

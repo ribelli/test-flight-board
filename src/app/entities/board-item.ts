@@ -9,11 +9,11 @@ export interface BoardItem {
     name: string
   };
   mar1: {
-    iata: string,
+    iata: string;
     city: string
   };
   mar2: {
-    iata: string,
+    iata: string;
     city: string
   };
   vip_status_eng: string;

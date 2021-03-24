@@ -1,11 +1,10 @@
 import {Injectable, NgModule} from '@angular/core';
-import {BoardItem} from '../entities/board-item';
 import {HttpClient, HttpParams, HttpHeaders} from '@angular/common/http';
 import {BrowserModule} from '@angular/platform-browser';
 import {map} from 'rxjs/operators';
 
 const GENERAL_URL = 'https://www.svo.aero/bitrix/timetable';
-const useMock = false;
+const USE_MOCK = false;
 
 @Injectable()
 
@@ -16,13 +15,10 @@ const useMock = false;
   ]
 })
 export class BoardService {
-  boardItems: BoardItem[] = [];
-
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
 
   getFlights(direction: string, dateStart, dateEnd, perPage: number, page: number) {
-    if (useMock) {
+    if (USE_MOCK) {
       // return apiMock.items;
     } else {
       const params = new HttpParams();
