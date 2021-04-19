@@ -1,5 +1,5 @@
 <div class="header header_shadowed"
-     [ngStyle]="{'background-color': isNowDay ? colorsOption.dayTheme : colorsOption.nightTheme }">
+     [ngStyle]="{'background-color': isNowDay ? colorsOptions.dayTheme : colorsOptions.nightTheme }">
   <div class="header__content">
     <div class="header__item header__item_textual">{{projectName}}</div>
     <app-header-content *ngIf="!isHidden"></app-header-content>

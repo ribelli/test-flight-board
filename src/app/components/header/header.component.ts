@@ -3,7 +3,7 @@ import {MOBILE_USER_AGENTS} from '@app/entities/user-agents.const';
 import {DaytimeHoursTypeEnum} from '@app/entities/daytime-hours';
 
 const PROJECT_NAME = 'RebelTripApp';
-const COLORS_OPTION = {
+const COLORS_OPTIONS = {
   dayTheme: '#8f87ff',
   nightTheme: '#161248',
 };
@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
   public isHidden: boolean;
   public isNowDay: boolean;
   public projectName = PROJECT_NAME;
-  public colorsOption = COLORS_OPTION;
+  public colorsOptions = COLORS_OPTIONS;
 
   ngOnInit() {
     const isMobile = navigator.userAgent.match(MOBILE_USER_AGENTS);
