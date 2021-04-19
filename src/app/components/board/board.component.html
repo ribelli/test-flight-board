@@ -10,7 +10,7 @@
       <label>
         <input class="timetable__input timetable__input_medium timetable__input_bordered timetable__item"
                type="text" ngxDaterangepickerMd
-               [locale]="{firstDay: 1, format: 'DD/MM/YYYY'}"
+               [locale]="{firstDay: 1, format: dateFormat}"
                [showCustomRangeLabel]="true"
                [alwaysShowCalendars]="true"
                [ranges]="dateRanges"
@@ -22,16 +22,17 @@
       <ngx-select-dropdown class="timetable__input timetable__input_medium timetable__item"
                            [multiple]="false"
                            [(value)]="singleSelect"
-                           [config]="flightRaceConfig" [options]="boards"
+                           [config]="flightRaceConfig"
+                           [options]="boards"
                            (change)="getFlightsFromRace()">
       </ngx-select-dropdown>
       <div class="timetable__item">
         <label>
           <input type="checkbox"
                  (click)="setStatusCode()"
-                 [checked]="currentStatusCode" />
+                 [checked]="isCurrentStatusCode" />
         </label>
-        <label>{{statusCode[0].valueOf()}}</label>
+        <label>{{currentStatusCode.valueOf()}}</label>
       </div>
     </div>
   </div>

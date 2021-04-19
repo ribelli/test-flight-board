@@ -1,44 +1,44 @@
 
 .sky-container {
-  height: 70px;
   width: 100%;
+  height: 70px;
+
+  .plane-container {
+    width: 100%;
+    margin: 0 auto;
+    z-index: 3;
+    -webkit-animation: paper-plane-scoping 2s alternate infinite;
+    -moz-animation: paper-plane-scoping 2s alternate infinite;
+    animation: paper-plane-scoping 2s alternate infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+
+  .paper-plane-container {
+    width: 15vw;
+    height: 25px;
+    -webkit-animation: paper-plane-soaring 4s forwards infinite;
+    -moz-animation: paper-plane-soaring 4s forwards infinite;
+    animation: paper-plane-soaring 4s forwards infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  .paper-plane {
+    fill: #D8D8D8;
+  }
+
+  .paper-plane-tail {
+    fill: #C4C4C3;
+  }
 }
 
 svg {
   max-width: 100%;
   height: auto;
   display: block;
-}
-
-.paper-plane {
-  fill: #D8D8D8;
-}
-
-.paper-plane-tail {
-  fill: #C4C4C3;
-}
-
-.paper-plane-container {
-  width: 15vw;
-  height: 25px;
-  -webkit-animation: paper-plane-soaring 4s forwards infinite;
-  -webkit-animation-timing-function: ease-in-out;
-  -moz-animation: paper-plane-soaring 4s forwards infinite;
-  -moz-animation-timing-function: ease-in-out;
-  animation: paper-plane-soaring 4s forwards infinite;
-  animation-timing-function: ease-in-out;
-}
-
-.plane-container {
-  width: 100%;
-  margin: 0 auto;
-  z-index: 3;
-  -webkit-animation: paper-plane-scoping 2s alternate infinite;
-  -webkit-animation-timing-function: linear;
-  -moz-animation: paper-plane-scoping 2s alternate infinite;
-  -moz-animation-timing-function: linear;
-  animation: paper-plane-scoping 2s alternate infinite;
-  animation-timing-function: linear;
 }
 
 .clouds-container {
@@ -49,77 +49,76 @@ svg {
   bottom: 0;
   overflow: hidden;
   transform: translateZ(0);
-}
 
-.cloud {
-  position: absolute;
-  top: 20%;
-  right: 0;
-  width: 300px;
-  height: 70px;
-  opacity: 1;
-  -webkit-animation: cloud-movement 8s infinite linear;
-  -webkit-animation-direction: forwards;
-  -moz-animation: cloud-movement 8s infinite linear;
-  -moz-animation-direction: forwards;
-  animation: cloud-movement 8s infinite linear;
-  animation-direction: forwards;
+  .cloud {
+    position: absolute;
+    top: 20%;
+    right: 0;
+    width: 300px;
+    height: 70px;
+    opacity: 1;
+    -webkit-animation: cloud-movement 8s infinite linear;
+    -moz-animation: cloud-movement 8s infinite linear;
+    animation: cloud-movement 8s infinite linear;
+    -webkit-animation-direction: forwards;
+    -moz-animation-direction: forwards;
+    animation-direction: forwards;
 
-  &_front {
-    z-index: 9;
+    &_front {
+      z-index: 9;
+    }
+
+    &_distant {
+      z-index: 1;
+    }
+
+    &_small {
+      margin-right: 200px;
+      width: 80px;
+    }
+
+    &_smaller {
+      margin-right: 400px;
+      width: 60px;
+      margin-top: 20px;
+    }
+
+    &_big {
+      width: 100px;
+      margin-top: 10px;
+      margin-right: 150px;
+    }
+
+    &_bigger {
+      width: 120px;
+      margin-top: 20px;
+      margin-right: 0;
+    }
   }
 
-  &_distant {
-    z-index: 1;
+  .slow {
+    -webkit-animation-duration: 9.2s;
+    -moz-animation-duration: 9.2s;
+    animation-duration: 9.2s;
   }
 
-  &_smaller {
-    margin-right: 400px;
-    width: 60px;
-    margin-top: 20px;
+  .slower {
+    -webkit-animation-duration: 11.2s;
+    -moz-animation-duration: 11.2s;
+    animation-duration: 11.2s;
   }
 
-  &_small {
-    margin-right: 200px;
-    width: 80px;
+  .slowest {
+    -webkit-animation-duration: 13.5s;
+    -moz-animation-duration: 13.5s;
+    animation-duration: 13.5s;
   }
 
-  &_big {
-    width: 100px;
-    margin-top: 10px;
-    margin-right: 150px;
+  .super-slow {
+    -webkit-animation-duration: 20.5s;
+    -moz-animation-duration: 20.5s;
+    animation-duration: 20.5s;
   }
-
-  &_massive {
-    width: 120px;
-    margin-top: 20px;
-    margin-right: 0;
-  }
-
-}
-
-.slow {
-  -webkit-animation-duration: 9.2s;
-  -moz-animation-duration: 9.2s;
-  animation-duration: 9.2s;
-}
-
-.slower {
-  -webkit-animation-duration: 11.2s;
-  -moz-animation-duration: 11.2s;
-  animation-duration: 11.2s;
-}
-
-.slowest {
-  -webkit-animation-duration: 13.5s;
-  -moz-animation-duration: 13.5s;
-  animation-duration: 13.5s;
-}
-
-.super-slow {
-  -webkit-animation-duration: 20.5s;
-  -moz-animation-duration: 20.5s;
-  animation-duration: 20.5s;
 }
 
 @-webkit-keyframes paper-plane-scoping {

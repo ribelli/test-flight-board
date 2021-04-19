@@ -1,9 +1,9 @@
 .header {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100vw;
   z-index: 1;
+  top: 0;
+  left: 0;
 
   &_shadowed {
     box-shadow: 0 6px 12px -5px #101010;

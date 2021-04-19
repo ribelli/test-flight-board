@@ -1,3 +1,5 @@
+@import 'src/styles-variables';
+
 .row-container {
   display: block;
   box-sizing: border-box;
@@ -30,7 +32,7 @@
   }
 
   &__time {
-    color: #7a5cd0;
+    color: $common-violet;
   }
 
   &__title {

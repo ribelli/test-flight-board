@@ -1,10 +1,13 @@
+@import 'src/styles-variables';
+$spinner-size: 50px;
+
 .spinner {
   display: inline-flex;
-  width: 50px;
-  height: 50px;
+  width: $spinner-size;
+  height: $spinner-size;
   border-radius: 50%;
-  border: 2px solid rgba(179, 179, 179, 0.3);
-  border-top: double #7a5cd0;
+  border: 2px solid rgba($common-grey, 0.3);
+  border-top: double $common-violet;
   animation: spin 1s ease-in-out infinite;
   -webkit-animation: spin 1s ease-in-out infinite;
 }
